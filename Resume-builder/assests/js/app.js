@@ -1,9 +1,10 @@
 const emailRegex =
-  /^(([^<>()\[\]\\.,;:\s@*]+(\.[^<>()\[\]\\.,:\s@*]+)*))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\-)+[a-zA-Z]{2,}))$/;
+  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/;
+
 const digitRegex = /^\d+$/;
 const strRegex = /^[a-zA-z\s]*$/;
 const PhoneRegex =
-  /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,5}[-\s\.]?[0-9]{4,8}$/im;
 
 const mainForm = document.getElementById("cv-form");
 const validType = {
@@ -247,16 +248,16 @@ const getUserInputs = () => {
         "edu_school",
         "edu_degree",
         "edu_city",
-        "edu_description",
         "edu_start_date",
         "edu_end_date",
+        "edu_description",
       ],
       eduSchoolElem,
       eduDegreeElem,
       eduCityElem,
-      eduDescription,
       eduStartDateElem,
-      eduEndDateElem
+      eduEndDateElem,
+      eduDescription
     ),
     //PROJECT
     projects: fetchValues(
